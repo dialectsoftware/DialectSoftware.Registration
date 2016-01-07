@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://microsoft.com/wsdl/types/" />
+  <xs:element name="User" nillable="true" type="User" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="userUID" xmlns:q1="http://microsoft.com/wsdl/types/" type="q1:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="userName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="isConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="isAnonymous" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="passwordFormat" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="passwordSalt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mobileAlias" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mobilePIN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="passwordQuestion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="passwordAnswer" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="lastActivityDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="isLockedOut" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="lastLoginDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="lastPasswordChangedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="lastLockoutDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="failedPasswordAttemptCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="failedPasswordAttemptWindowStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="failedPasswordAnswerAttemptCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="failedPasswordAnswerAttemptWindowStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contact" type="Contact" />
+      <xs:element minOccurs="0" maxOccurs="1" name="profile" type="ArrayOfProfile" />
+      <xs:element minOccurs="0" maxOccurs="1" name="role" type="ArrayOfRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="formOfAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="givenName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="firstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="middleName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="preferredName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="surnamePrefix" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="surname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="firstPartOfLastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nameSuffixOrGeneration" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="qualification" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="precedingQualification" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="intermediateQualification" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="succeedingQualification" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addresses" type="ArrayOfAddress" />
+      <xs:element minOccurs="0" maxOccurs="1" name="phoneNumbers" type="ArrayOfPhone" />
+      <xs:element minOccurs="0" maxOccurs="1" name="emailAddresses" type="ArrayOfEmail" />
+      <xs:element minOccurs="0" maxOccurs="1" name="accounts" type="ArrayOfOnlineAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="addressLine1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addressLine2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addressLine3" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="additionalAddressLine1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="additionalAddressLine2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countyOrParishName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="cityStateZipLine" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="cityOrTownName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="stateProvinceRegion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="stateProvinceAbbreviation" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="postcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="zipCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="zipPlusFourAddendum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="zipCodeDeliveryPointAddOn" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="formattedPostalCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryIntlLanguage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryIntlLanguageCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryIntlLanguageName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isoCountryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPhone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Phone" nillable="true" type="Phone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Phone">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="formattedPhoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="areaCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isoCountryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Email" nillable="true" type="Email" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Email">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="emailType" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="formattedEmailAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="localpart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="domainName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfOnlineAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OnlineAccount" nillable="true" type="OnlineAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OnlineAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="uri" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="service" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="host" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Profile" nillable="true" type="Profile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PropertyName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PropertyValueString" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PropertyValueBinary" type="xs:base64Binary" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LastUpdatedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Right" nillable="true" type="Right" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Right">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

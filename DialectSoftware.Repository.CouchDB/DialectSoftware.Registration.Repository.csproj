@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EE8E603-132A-4D51-A99A-E4FBAFC74934}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DialectSoftware.Registration.Repository</RootNamespace>
+    <AssemblyName>DialectSoftware.Registration.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactsRepository.cs" />
+    <Compile Include="Interfaces\IContactRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DialectSoftware.Registration.Document.Management\DialectSoftware.Registration.CouchDB.csproj">
+      <Project>{24bde644-118f-42b8-a8a5-7593964c88aa}</Project>
+      <Name>DialectSoftware.Registration.CouchDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DialectSoftware.Registration.Documents\DialectSoftware.Registration.csproj">
+      <Project>{3be3faeb-a321-4cc3-9fa3-7ab9f1fdeead}</Project>
+      <Name>DialectSoftware.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DialectSoftware.Repository\DialectSoftware.Storage.Repository.csproj">
+      <Project>{0340205C-6588-4535-993B-55D57192E415}</Project>
+      <Name>DialectSoftware.Storage.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Open Source\LitJson\LitJson.csproj">
+      <Project>{50C9FD2A-3533-41A0-962F-6B359DF8ECBA}</Project>
+      <Name>LitJson</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Open Source\SharpCouch\SharpCouch.csproj">
+      <Project>{317439C1-B94C-47BC-9D74-FB060280A543}</Project>
+      <Name>SharpCouch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
