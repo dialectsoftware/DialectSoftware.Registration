@@ -65,6 +65,7 @@
   <ItemGroup>
     <None Include="ContactDiagram.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\LICENSE" />
     <None Include="Schemas\user.xsd">
       <SubType>Designer</SubType>
     </None>
